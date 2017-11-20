@@ -11,7 +11,7 @@ CREATE TABLE Product (
 
 CREATE TABLE Orders (
 	Order_ID int,
-    Num_Products int,
+    Customer_Name varchar(45),
     Payment_Choice varchar(45),
     Subtotal double,
     Tax_Rate double,
@@ -28,34 +28,16 @@ CREATE TABLE OrderLine (
 	Primary Key(Barcode_Number, Order_ID)
 );
 
-CREATE TABLE Cashier (
-	Employee_ID int,
-	Employee_Name varchar(45),
-	wage double,
-    Primary Key(Employee_ID)
+# Addition for Iteration #2 of Course Project
+CREATE TABLE  Users (
+	User_ID int not null,
+    User_Name varchar(45) not null,
+	User_Password varchar(45) not null,
+    User_Picture longblob,
+    Is_Manager boolean default false,
+    Primary Key(User_ID)
 );
 
-CREATE TABLE Customer (
-	Customer_Name varchar(45),
-	Payment_Choice double,
-    Primary Key(Customer_Name)
-);
-
-CREATE TABLE Product_Inventory (
-	Barcode_Number int,
-    Admin varchar(45),
-	Capacity int,
-    Assets double,
-    Primary Key(Admin)
-);
-
-CREATE TABLE  Order_Inventory (
-	Order_ID int,
-    Admin varchar(45),
-	Capacity int,
-    Revenue double,
-    Primary Key(Admin)
-);
 
 # Insert sample datasets into tables
 INSERT INTO Product 
@@ -66,11 +48,11 @@ Values (101, 'Apple', 25, 1.00, 'Johnny Appleseed', '2568709132'),
 (105, 'Pear', 15, 1.00, 'Pear Man', '6546547654');
 
 INSERT INTO Orders
-Values (1, 2, 'Credit Card', 4.50, 0.05, 4.73),
-(2, 2, 'Cash', 30.00, 0.05, 31.50),
-(3, 2, 'Check', 4.00, 0.05, 4.20),
-(4, 3, 'Credit Card', 12.00, 0.05, 12.60),
-(5, 3, 'Cash', 5.25, 0.05, 5.51);
+Values (1, 'Person1', 'Credit Card', 4.50, 0.05, 4.73),
+(2, 'Person2', 'Cash', 30.00, 0.05, 31.50),
+(3, 'Person3', 'Check', 4.00, 0.05, 4.20),
+(4, 'Person4', 'Credit Card', 12.00, 0.05, 12.60),
+(5, 'Person5', 'Cash', 5.25, 0.05, 5.51);
 
 INSERT INTO Orderline
 Values (1, 101, 'Apple', 2, 2.00),
@@ -85,3 +67,7 @@ Values (1, 101, 'Apple', 2, 2.00),
 (5, 104, 'Water Bottle', 2, 2.00),
 (5, 102, 'Banana', 5, 2.50),
 (5, 103, 'Orange', 1, 0.75);
+
+INSERT INTO Users
+Values (111, 'Patrick Snell', 'password', null, true),
+(222, 'Brad Bayuga', 'password2', null, false);
