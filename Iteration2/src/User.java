@@ -2,6 +2,7 @@ public class User {
     private String userID;
     private String userName;
     private String password;
+    private String picture;
     private String isManager;
 
 
@@ -35,6 +36,14 @@ public class User {
 
     public void setManager(String manager) {
         this.isManager = manager;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.isManager = picture;
     }
 
 }

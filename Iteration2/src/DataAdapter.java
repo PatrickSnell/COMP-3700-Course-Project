@@ -319,4 +319,24 @@ public class DataAdapter {
             return false;
         }
     }
+
+    public boolean savePicture(User employee) {
+        try {
+            PreparedStatement statement = connection.prepareStatement("UPDATE Users set User_Picture = ? where User_ID = ? AND User_Password = ?");
+            statement.setString(1, employee.getUserID());
+            statement.setString(2, employee.getUserID());
+            statement.setString(3, employee.getPassword());
+
+            statement.execute();    // commit to the database;
+            statement.close();
+
+            return true; // save successfully!
+        }
+        catch (SQLException e) {
+            System.out.println("Database access error!");
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 }
