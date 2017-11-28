@@ -10,15 +10,13 @@ public class ReportController {
     public ReportController(ReportView view, DataAdapter dataAdapter) {
         this.dataAdapter = dataAdapter;
         this.reportView = view;
-
+        this.report = dataAdapter.loadReport();
         loadReport();
     }
 
 
 
     public void loadReport() {
-        //report = dataAdapter.loadReport();
-        //reportView.getPanelRevenue().setText(String.valueOf(report.getPrice()));
 
         reportView.getPanelNumSales().setText("Number of Sales: " + report.getNumSales());
         reportView.getPanelMeanPerSale().setText("Mean Items per Sale: " + report.getAvgSaleQuant());
@@ -26,12 +24,6 @@ public class ReportController {
         reportView.getPanelRevenue().setText("Revenue: " + report.getRevenue());
         reportView.getPanelRevenuePerSale().setText("Mean Revenue per Sale: " + report.getAvgSale());
 
-        //reportView.getPanel().setText("Lol");
-        /*productView.getTxtProductName().setText(product.getName());
-        productView.getTxtProductPrice().setText(String.valueOf(product.getPrice()));
-        productView.getTxtProductQuantity().setText(String.valueOf(product.getQuantity()));
-        productView.getTxtProvider().setText(String.valueOf(product.getproviderName()));
-        productView.getTxtContact().setText(String.valueOf(product.getproviderContact()));*/
     }
 
 
