@@ -27,16 +27,19 @@ public class NewUserView extends JFrame{
         JPanel panelUserName = new JPanel();
         panelUserName.add(new JLabel("User Name: "));
         panelUserName.add(txtUserName);
+        txtUserName.setHorizontalAlignment(JTextField.RIGHT);
         this.getContentPane().add(panelUserName);
 
         JPanel panelPassword = new JPanel();
         panelPassword.add(new JLabel("Password: "));
         panelPassword.add(txtPassword);
+        txtPassword.setHorizontalAlignment(JTextField.RIGHT);
         this.getContentPane().add(panelPassword);
 
         JPanel panelIsManager = new JPanel();
         panelIsManager.add(new JLabel("Is Manager (Type Yes or No): "));
         panelIsManager.add(txtIsManager);
+        txtIsManager.setHorizontalAlignment(JTextField.RIGHT);
         this.getContentPane().add(panelIsManager);
 
     }
