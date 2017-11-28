@@ -30,11 +30,11 @@ CREATE TABLE OrderLine (
 
 # Addition for Iteration #2 of Course Project
 CREATE TABLE  Users (
-	User_ID int not null,
+	User_ID varchar(45) not null,
     User_Name varchar(45) not null,
 	User_Password varchar(45) not null,
     User_Picture longblob,
-    Is_Manager boolean default false,
+    Is_Manager varchar(45) not null,
     Primary Key(User_ID)
 );
 
@@ -69,5 +69,5 @@ Values (1, 101, 'Apple', 2, 2.00),
 (5, 103, 'Orange', 1, 0.75);
 
 INSERT INTO Users
-Values (111, 'Patrick Snell', 'password', null, true),
-(222, 'Brad Bayuga', 'password2', null, false);
+Values ('111', 'Patrick Snell', 'password', null, 'Yes'),
+('222', 'Brad Bayuga', 'password2', null, 'No');
