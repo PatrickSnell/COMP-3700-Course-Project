@@ -20,11 +20,9 @@ public class ReportController {
 
         reportView.getPanelNumSales().setText("Number of Sales: " + report.getNumSales());
         reportView.getPanelMeanPerSale().setText("Mean Items per Sale: " + report.getAvgSaleQuant());
-        reportView.getPanelNumProductSold().setText("Number of Products Sold: " + report.getNumProducts());
-        reportView.getPanelRevenue().setText("Revenue: " + report.getRevenue());
-        reportView.getPanelRevenuePerSale().setText("Mean Revenue per Sale: " + report.getAvgSale());
+        reportView.getPanelNumProductSold().setText("Number of Items Sold: " + report.getNumProducts());
+        reportView.getPanelRevenue().setText("Revenue: $" + report.getRevenue());
+        reportView.getPanelRevenuePerSale().setText("Mean Revenue per Sale: $" + report.getAvgSale());
 
     }
-
-
 }

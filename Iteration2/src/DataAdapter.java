@@ -230,7 +230,7 @@ public class DataAdapter {
             }
 
 
-            query = "SELECT AVG(Total_Price) FROM Orders";
+            query = "SELECT Round(AVG(Total_Price), 2) FROM Orders";
 
             statement = connection.createStatement();
             resultSet = statement.executeQuery(query);
