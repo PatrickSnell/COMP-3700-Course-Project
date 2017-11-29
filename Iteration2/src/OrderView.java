@@ -11,7 +11,7 @@ public class OrderView extends JFrame{
     private JTextField txtTaxRate  = new JTextField(10);
     private JTextField txtTotalPrice  = new JTextField(10);
 
-    private JButton mainScreen = new JButton("Return Home");
+    private JButton cashierScreen = new JButton("Return Home");
     private DefaultTableModel items = new DefaultTableModel();
     private JTable table = new JTable(items);
     DataAdapter dataAdapter;
@@ -36,11 +36,11 @@ public class OrderView extends JFrame{
 
         JPanel panelButton = new JPanel();
         panelButton.setPreferredSize(new Dimension(400, 100));
-        panelButton.add(mainScreen);
+        panelButton.add(cashierScreen);
         this.getContentPane().add(panelButton);
     }
-    public JButton returnToMainScreen() {
-        return mainScreen;
+    public JButton returnToCashierScreen() {
+        return cashierScreen;
     }
 
     public JTextField getTxtOrderID() {

@@ -9,7 +9,7 @@ public class OrderController implements ActionListener {
     public OrderController(OrderView view, DataAdapter dataAdapter) {
         this.dataAdapter = dataAdapter;
         this.orderView = view;
-        view.returnToMainScreen().addActionListener(this);
+        view.returnToCashierScreen().addActionListener(this);
     }
 
     public void actionPerformed(ActionEvent e) {
