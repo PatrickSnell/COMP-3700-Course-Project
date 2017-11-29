@@ -237,14 +237,14 @@ public class DataAdapter {
             if (resultSet.next()) {
                 report.setAvgSale(resultSet.getDouble(1));
             }
-            query = "SELECT AVG(Num_Products) FROM Orders";
+            query = "SELECT SUM(Quantity) FROM OrderLine";
 
             statement = connection.createStatement();
             resultSet = statement.executeQuery(query);
             if (resultSet.next()) {
-                report.setAvgSaleQuant(resultSet.getDouble(1));
+                report.setAvgSaleQuant(resultSet.getDouble(1) / report.getNumSales());
             }
-            query = "SELECT SUM(Num_Products) FROM Orders";
+            query = "SELECT SUM(Quantity) FROM OrderLine";
 
             statement = connection.createStatement();
             resultSet = statement.executeQuery(query);
