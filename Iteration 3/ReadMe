@@ -1,1 +1,13 @@
-Test
+ReadMe
+
+We used IntelliJ IDEA and MySQL to create this project and ran it with the main class being Application. 
+
+The Users table in StoreManagementSystem.sql contains the following accounts for logging in:
+
+UserID: 111
+Password: password
+(manager) 
+
+UserID: 222
+Password: password2
+(cashier)
